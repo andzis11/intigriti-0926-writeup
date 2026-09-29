@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Critter Gallery</title>
+  <style>
+    :root{
+      --bg:#0f1226; --panel:#171b3a; --panel2:#1f2450; --line:#2c3170;
+      --text:#eef0ff; --muted:#a3a8d8; --accent:#7c9cff; --accent2:#ff8bd0;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:"Segoe UI",system-ui,Arial,sans-serif;background:
+      radial-gradient(1200px 500px at 20% -10%,#26305e 0,transparent 60%),
+      radial-gradient(1000px 500px at 100% 0,#3a2350 0,transparent 55%),var(--bg);
+      color:var(--text);min-height:100vh}
+    header{padding:26px 32px;display:flex;align-items:center;gap:14px}
+    header .logo{font-size:30px}
+    header h1{margin:0;font-size:22px;letter-spacing:.3px}
+    header p{margin:2px 0 0;color:var(--muted);font-size:13px}
+    main{max-width:960px;margin:8px auto 60px;padding:0 20px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px}
+    .tile{display:block;text-decoration:none;color:inherit;background:var(--panel);
+      border:1px solid var(--line);border-radius:16px;padding:22px 14px;text-align:center;
+      transition:transform .12s ease,border-color .12s ease,background .12s ease}
+    .tile:hover{transform:translateY(-4px);border-color:var(--accent);background:var(--panel2)}
+    .tile .emoji{font-size:52px;line-height:1}
+    .tile .name{margin-top:10px;text-transform:capitalize;font-weight:600}
+    .detail{margin:0 0 26px;background:linear-gradient(135deg,var(--panel2),var(--panel));
+      border:1px solid var(--line);border-radius:20px;padding:26px;display:flex;gap:24px;align-items:center}
+    .detail .art{font-size:96px;filter:drop-shadow(0 8px 20px rgba(0,0,0,.4))}
+    .detail h2{margin:0 0 8px;text-transform:capitalize}
+    .detail .desc{color:#dfe2ff;font-size:16px;line-height:1.5}
+    .detail .back{display:inline-block;margin-top:14px;color:var(--accent);text-decoration:none;font-size:14px}
+    .empty{color:var(--muted)}
+    .section-label{margin:26px 4px 12px;color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.12em}
+    footer{color:var(--muted);text-align:center;padding:24px;font-size:12px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">🐾</div>
+    <div>
+      <h1>Critter Gallery</h1>
+      <p>A tiny gallery of the animal kingdom.</p>
+    </div>
+  </header>
+
+  <main>
+          <section class="detail">
+        <div class="art">🖼️</div>
+        <div>
+          <h2></h2>
+                      <div class="desc empty">No critter goes by that name yet.</div>
+                    <a class="back" href="./">← back to the gallery</a>
+        </div>
+      </section>
+    
+    <div class="section-label">Browse critters</div>
+    <div class="grid">
+              <a class="tile" href="?pic=Zm94">
+          <div class="emoji">🦊</div>
+          <div class="name">fox</div>
+        </a>
+              <a class="tile" href="?pic=cGFuZGE=">
+          <div class="emoji">🐼</div>
+          <div class="name">panda</div>
+        </a>
+              <a class="tile" href="?pic=bGlvbg==">
+          <div class="emoji">🦁</div>
+          <div class="name">lion</div>
+        </a>
+              <a class="tile" href="?pic=cGVuZ3Vpbg==">
+          <div class="emoji">🐧</div>
+          <div class="name">penguin</div>
+        </a>
+              <a class="tile" href="?pic=b3R0ZXI=">
+          <div class="emoji">🦦</div>
+          <div class="name">otter</div>
+        </a>
+              <a class="tile" href="?pic=a29hbGE=">
+          <div class="emoji">🐨</div>
+          <div class="name">koala</div>
+        </a>
+              <a class="tile" href="?pic=b3ds">
+          <div class="emoji">🦉</div>
+          <div class="name">owl</div>
+        </a>
+              <a class="tile" href="?pic=dGlnZXI=">
+          <div class="emoji">🐅</div>
+          <div class="name">tiger</div>
+        </a>
+          </div>
+  </main>
+
+  <footer>Critter Gallery · made with 🐾</footer>
+</body>
+</html>

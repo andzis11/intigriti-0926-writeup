@@ -1,0 +1,8 @@
+HTTP/2 200 
+date: Mon, 28 Sep 2026 18:25:17 GMT
+content-type: text/html; charset=UTF-8
+host: challenge-0926.challenges.intigriti.io
+x-powered-by: PHP/8.2.33
+x-envoy-upstream-service-time: 2
+server: istio-envoy
+

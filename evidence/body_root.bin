@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Intigriti September Challenge</title>
+
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="@intigriti">
+		<meta name="twitter:creator" content="@intigriti">
+		<meta name="twitter:title" content="September Challenge - Intigriti">
+		<meta name="twitter:description" content="Find the FLAG and WIN Intigriti swag.">
+		<meta name="twitter:image" content="https://challenge-0926.challenges.intigriti.io/static/images/share.png">
+		<meta property="og:url" content="https://challenge-0926.challenges.intigriti.io">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="September Challenge - Intigriti">
+		<meta property="og:description" content="Find the FLAG and WIN Intigriti swag.">
+		<meta property="og:image" content="https://challenge-0926.challenges.intigriti.io/static/images/share.png">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+		<link href="/static/css/style.css" rel="stylesheet">
+		<link rel="shortcut icon" href="/static/favicon.ico">
+	</head>
+
+	<body>
+		<section id="wrapper">
+			<section id="rules">
+				<div id="challenge-container" class="card-container">
+					<div class="card-header">
+						<img class="card-avatar" src="/static/images/creator.jpg" alt="creator">
+						Intigriti's September challenge by <a target="_blank" href="https://x.com/khanhdlq">khanhdlq</a>
+					</div>
+					<div id="challenge-progress-section">
+						<div id="challenge-status-banner" class="challenge-status-banner" style="display:none;">
+							<span id="challenge-status-text"></span>
+						</div>
+						<div class="challenge-timeline">
+							<div class="timeline-track">
+								<div id="timeline-fill" class="timeline-fill"></div>
+							</div>
+							<div id="milestone-start" class="timeline-milestone">
+								<div class="milestone-dot"></div>
+								<span class="milestone-label" id="label-start"></span>
+							</div>
+							<div id="milestone-end" class="timeline-milestone">
+								<div class="milestone-dot"></div>
+								<span class="milestone-label" id="label-end"></span>
+							</div>
+							<div id="milestone-selection" class="timeline-milestone">
+								<div class="milestone-dot"></div>
+								<span class="milestone-label" id="label-selection"></span>
+							</div>
+						</div>
+					</div>
+					<div id="challenge-info" class="card-content">
+						<p>Find the FLAG and win Intigriti swag! 🏆</p>
+						<b>Rules:</b>
+						<ul>
+							<li>This challenge runs from 21/09/2026 10:00 AM until 28/09/2026, 11:59 PM UTC.</li>
+							<li>
+								Out of all correct submissions, we will draw <b>seven</b> winners on Wednesday 30/09/2026:
+								<ul>
+									<li>First blood</li>
+									<li>Three randomly drawn correct submissions</li>
+									<li>Three best write-ups</li>
+								</ul>
+							</li>
+							<li>Every winner gets a €50 swag voucher for our <a href="https://swag.intigriti.io/"
+									target="_blank">swag shop</a></li>
+							<li>First blood receives a €100 swag voucher!</li>
+							<li>The winners will be announced on our <a href="https://x.com/intigriti"
+									target="_blank">Twitter profile</a>.</li>
+							<li>For every 100 likes, we'll add a tip to <a href="https://go.intigriti.com/challenge-tips"
+									target="_blank">announcement tweet</a>.</li>
+							<li>Join our <a href="https://go.intigriti.com/discord" target="_blank">Discord</a> to discuss
+								the challenge!</li>
+						</ul>
+						<b>The solution:</b>
+						<ul>
+                            <li>Should leverage a vulnerability on the challenge page.</li>
+                            <li>Shouldn't be self-XSS or related to MiTM attacks.</li>
+                            <li>Should include:</li>
+                            <ul>
+								<li>The flag in the format <code>INTIGRITI{.*}</code></li>
+                                <li>The payload(s) used</li>
+                                <li>Steps to solve (short description / bullet points)</li>
+                            </ul>
+                            <li>Should be reported on the <a href="https://go.intigriti.com/submit-solution">Intigriti platform</a>.
+                            </li>
+                        </ul>
+                        <b>Get started:</b>
+                        <ol>
+							<li>
+								Test your payloads on the <b><a href="/challenge.php">challenge page</a></b> & let's capture that flag!
+                            </li>
+                        </ol>
+					</div>
+				</div>
+				<div class="card-container">
+                    <iframe src="/challenge.php" width="100%" height="800px"></iframe>
+               </div>
+			</section>
+		</section>
+
+		<script>
+			const CHALLENGE_CONFIG = {
+				startDate:     "2026-09-21T10:00:00Z",
+				endDate:       "2026-09-28T23:59:00Z",
+				selectionDate: "2026-09-30T00:00:00Z"
+			};
+		</script>
+		<script>
+			function formatMilestoneDate(isoString) {
+				return new Date(isoString).toLocaleDateString('en-GB', {
+					day: 'numeric',
+					month: 'numeric',
+					timeZone: 'UTC'
+				});
+			}
+
+			(function () {
+				var cfg = CHALLENGE_CONFIG;
+				if (!cfg) return;
+
+				var startMs     = new Date(cfg.startDate).getTime();
+				var endMs       = new Date(cfg.endDate).getTime();
+				var selectionMs = new Date(cfg.selectionDate).getTime();
+
+				document.getElementById('label-start').textContent     = formatMilestoneDate(cfg.startDate);
+				document.getElementById('label-end').textContent       = formatMilestoneDate(cfg.endDate);
+				document.getElementById('label-selection').textContent = formatMilestoneDate(cfg.selectionDate);
+
+				var nowMs = Date.now();
+				var fillPct;
+
+				if (nowMs <= startMs) {
+					fillPct = 0;
+				} else if (nowMs <= endMs) {
+					fillPct = (nowMs - startMs) / (endMs - startMs) * 80;
+				} else if (nowMs <= selectionMs) {
+					fillPct = 80 + (nowMs - endMs) / (selectionMs - endMs) * 20;
+				} else {
+					fillPct = 100;
+				}
+
+				var fillEl = document.getElementById('timeline-fill');
+				fillEl.style.width           = fillPct.toFixed(2) + '%';
+				fillEl.style.backgroundColor = '#EF3257';
+
+				var banner = document.getElementById('challenge-status-banner');
+				var text   = document.getElementById('challenge-status-text');
+
+				if (nowMs >= startMs && nowMs < endMs) {
+					text.textContent = "Challenge is live! Solve the challenge before it ends to participate in this month's CTF competition.";
+					banner.style.display = 'block';
+				} else if (nowMs >= endMs && nowMs < selectionMs) {
+					text.textContent = "Challenge has ended! No new submissions will be accepted. If you have a write-up, please publish it now and leave a comment with the link to it under your report!";
+					banner.style.display = 'block';
+				} else if (nowMs >= endMs && nowMs > selectionMs) {
+					text.innerHTML = "Winners have been announced! Check out our <a href='https://x.com/INTIGRITI'>Twitter/X account</a> to see if you\u2019ve won.";
+					banner.style.display = 'block';
+				} else {
+					banner.style.display = 'none';
+				}
+			})();
+		</script>
+	</body>
+</html>
