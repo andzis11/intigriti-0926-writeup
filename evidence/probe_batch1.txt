@@ -1,0 +1,30 @@
+RAW  : 'fox'
+B64  : Zm94
+HTTP : 200 LEN=4053
+DET  : art='🦊' h2='fox' desc='The red fox is a clever, highly adaptable hunter.<br>'
+------------------------------------------------------------------------
+RAW  : '!!!!'
+B64  : ISEhIQ==
+HTTP : 200 LEN=4041
+DET  : art='🖼️' h2='!!!!' desc=None
+------------------------------------------------------------------------
+RAW  : "'"
+B64  : Jw==
+HTTP : 200 LEN=0
+DET  : [no detail section]
+------------------------------------------------------------------------
+RAW  : '"'
+B64  : Ig==
+HTTP : 200 LEN=4043
+DET  : art='🖼️' h2='&quot;' desc=None
+------------------------------------------------------------------------
+RAW  : "' OR '1'='1"
+B64  : JyBPUiAnMSc9JzE=
+HTTP : 200 LEN=4451
+DET  : art='🖼️' h2='&#039; OR &#039;1&#039;=&#039;1' desc='The red fox is a clever, highly adaptable hunter.<br>Giant pandas spend most of the day munching bamboo.<br>Lions are the only truly social of the big cats.<br>Penguins are flightless birds of the southern seas.<br>Sea otters hold hands while they sleep so they do not drift apart.<br>Koalas sleep up to twenty hours a day.<br>Owls can rotate their heads around 270 degrees.<br>Tigers are the largest of all wild cats.<br>'
+------------------------------------------------------------------------
+RAW  : "' OR 1=1-- -"
+B64  : JyBPUiAxPTEtLSAt
+HTTP : 200 LEN=4437
+DET  : art='🖼️' h2='&#039; OR 1=1-- -' desc='The red fox is a clever, highly adaptable hunter.<br>Giant pandas spend most of the day munching bamboo.<br>Lions are the only truly social of the big cats.<br>Penguins are flightless birds of the southern seas.<br>Sea otters hold hands while they sleep so they do not drift apart.<br>Koalas sleep up to twenty hours a day.<br>Owls can rotate their heads around 270 degrees.<br>Tigers are the largest of all wild cats.<br>'
+------------------------------------------------------------------------

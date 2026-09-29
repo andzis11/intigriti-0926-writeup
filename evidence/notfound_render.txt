@@ -1,0 +1,20 @@
+RAW  : '!!!!'
+B64  : ISEhIQ==
+HTTP : 200 LEN=4079 bytes
+DET  : art='🖼️' h2='!!!!' desc[desc empty]='No critter goes by that name yet.'
+------------------------------------------------------------------------
+RAW  : '"'
+B64  : Ig==
+HTTP : 200 LEN=4081 bytes
+DET  : art='🖼️' h2='&quot;' desc[desc empty]='No critter goes by that name yet.'
+------------------------------------------------------------------------
+RAW  : "' ORDER BY 1-- -"
+B64  : JyBPUkRFUiBCWSAxLS0gLQ==
+HTTP : 200 LEN=4096 bytes
+DET  : art='🖼️' h2='&#039; ORDER BY 1-- -' desc[desc empty]='No critter goes by that name yet.'
+------------------------------------------------------------------------
+RAW  : 'fox'
+B64  : Zm94
+HTTP : 200 LEN=4089 bytes
+DET  : art='🦊' h2='fox' desc[desc]='The red fox is a clever, highly adaptable hunter.<br>'
+------------------------------------------------------------------------

